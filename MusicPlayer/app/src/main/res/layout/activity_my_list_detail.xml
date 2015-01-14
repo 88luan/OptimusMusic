@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="bin.mymodule.musicplayer.Activities.MyListDetailActivity">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_activity_my_list_detail"
+        android:textColor="#ff02fdff"
+        android:id="@+id/btAddSong"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <!-- moi ListView deu co id la "@android:id/list" -->
+    <ListView
+        android:id="@android:id/list"
+        android:layout_above="@+id/btAddSong"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="#242424"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector" />
+
+</RelativeLayout>

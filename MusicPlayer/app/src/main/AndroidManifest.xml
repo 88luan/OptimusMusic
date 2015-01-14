@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bin.mymodule.musicplayer" >
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="bin.mymodule.musicplayer.Activities.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="bin.mymodule.musicplayer.Activities.MUSIC_PLAYER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="bin.mymodule.musicplayer.Activities.AllSongActivity"
+            android:label="Tất cả bài hát" >
+        </activity>
+
+        <service
+            android:name="bin.mymodule.musicplayer.Manager.MusicService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity android:name="bin.mymodule.musicplayer.Activities.MainListActivity"
+            android:label="Thư viện">
+        </activity>
+        <activity android:name="bin.mymodule.musicplayer.Activities.AlbumActivity"
+            android:label="Album">
+        </activity>
+        <activity android:name="bin.mymodule.musicplayer.Activities.AlbumDetailActivity" >
+        </activity>
+        <activity android:name="bin.mymodule.musicplayer.Activities.MyListActivity"
+            android:label="Danh sách">
+        </activity>
+        <activity android:name="bin.mymodule.musicplayer.Activities.MyListDetailActivity" >
+        </activity>
+
+        <receiver android:name="bin.mymodule.musicplayer.AppWidget.WidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_widget_info" />
+        </receiver>
+        <receiver
+            android:name="bin.mymodule.musicplayer.AppWidget.WidgetReceiver"
+            android:label="widgetBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="bin.mymodule.musicplayer.AppWidget.MusicWidget.Play" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="bin.mymodule.musicplayer.AppWidget.MusicWidget.Stop" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="bin.mymodule.musicplayer.AppWidget.MusicWidget.Music" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="bin.mymodule.musicplayer.AppWidget.MusicWidget.Next" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="bin.mymodule.musicplayer.AppWidget.MusicWidget.Previous" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_widget_info" />
+        </receiver>
+
+        <activity
+            android:name="bin.mymodule.musicplayer.Activities.AdjustActivity"
+            android:label="Bộ chỉnh âm" >
+        </activity>
+
+    </application>
+
+</manifest>

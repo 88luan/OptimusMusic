@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="bin.mymodule.musicplayer.Activities.MyListActivity">
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_activity_my_list"
+        android:textColor="#ff02fdff"
+        android:id="@+id/btAddList"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <GridView
+        android:layout_above="@+id/btAddList"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/gvPlayList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="2dp">
+    </GridView>
+</RelativeLayout>
